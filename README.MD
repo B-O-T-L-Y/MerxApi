@@ -1,6 +1,6 @@
 # Product API
 
-A simple  RESTful API for managing products built with **PHP 8.4**, **FastRoute**, **Doctrine DBAL**, and **PostgreSQL**.
+A simple RESTful API for managing products built with **PHP 8.4**, **FastRoute**, **Doctrine DBAL**, and **PostgreSQL**.
 
 ## Features
 - CRUD operations for products
@@ -8,12 +8,8 @@ A simple  RESTful API for managing products built with **PHP 8.4**, **FastRoute*
 - Error handling middleware
 - Dockerized setup with PostgreSQL
 
----
-
 ## Requirements
 - Docker & Docker Compose
-
----
 
 ## Setup
 
@@ -26,7 +22,6 @@ A simple  RESTful API for managing products built with **PHP 8.4**, **FastRoute*
 ```bash
   make up
 ```
-
 
 ### Run database migration
 ```bash
@@ -55,13 +50,9 @@ A simple  RESTful API for managing products built with **PHP 8.4**, **FastRoute*
 
 **OR USE COMMANDS in Makefile**
 
----
-
 ## Access the API
 #### The API is available at:
 [http://localhost:8000](http://localhost:8000)
-
----
 
 ## API Endpoints
 **POST** `/products` — Create a new product
@@ -73,8 +64,6 @@ A simple  RESTful API for managing products built with **PHP 8.4**, **FastRoute*
 **DELETE** `/products/{id}` — Delete product by ID
 
 **GET** `/products` — List products (optional filters: category, price)
-
----
 
 ## API Testing
 
