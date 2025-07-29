@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "d93a52a0-654a-452c-a34c-5a86376828a2",
+		"name": "MerxApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13303412"
+	},
+	"item": [
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Iphone 1\",\n    \"price\": 999.9,\n    \"category\": \"electronics\",\n    \"attributes\": {\"brand\":\"Apple\",\"color\":\"gray\"}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/products",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "show",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base-url}}/products/3a94c82d-d1f1-444e-8f51-e9d3d817b9c9",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"products",
+						"3a94c82d-d1f1-444e-8f51-e9d3d817b9c9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"iphone 1012\",\n  \"price\": 1000000,\n  \"category\": \"premium\",\n  \"attributes\": {\"brand\":\"Apple\",\"color\":\"black\"}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/products/3a94c82d-d1f1-444e-8f51-e9d3d817b9c9",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"products",
+						"3a94c82d-d1f1-444e-8f51-e9d3d817b9c9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base-url}}/products/3a94c82d-d1f1-444e-8f51-e9d3d817b9c9",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"products",
+						"3a94c82d-d1f1-444e-8f51-e9d3d817b9c9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base-url}}/products",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base-url",
+			"value": "http://localhost:8000",
+			"type": "string"
+		}
+	]
+}

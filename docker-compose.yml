@@ -1,0 +1,32 @@
+services:
+  app:
+    container_name: app
+    build:
+      context: .
+      dockerfile: _docker/php/Dockerfile
+      args:
+        UID: 1000
+        GID: 1000
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - db
+
+  db:
+    container_name: db
+    build:
+      context: .
+      dockerfile: _docker/pgsql/Dockerfile
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: app
+      POSTGRES_USER: app_user
+      POSTGRES_PASSWORD: secret
+      POSTGRES_INITDB_ARGS: "--encoding=UTF8 --locale=en_US.UTF-8"
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db_data:/var/lib/postgresql/data
